@@ -10,11 +10,11 @@ class Schedule extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama_bus',         // Bus 1 / Bus 2
-        'rute',             // Manado-Toraja / Toraja-Manado
+        'nama_bus',
+        'rute',
         'tanggal_berangkat',
         'jam_berangkat',
-        'harga',            // Harga per kursi
+        'harga',
         'kapasitas',
         'tipe_jadwal'
     ];
@@ -23,7 +23,6 @@ class Schedule extends Model
         'tanggal_berangkat' => 'date',
     ];
 
-    // Relasi ke Tiket: Satu jadwal memiliki banyak tiket
     public function tickets()
     {
         return $this->hasMany(Ticket::class);
