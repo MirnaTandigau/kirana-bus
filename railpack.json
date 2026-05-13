@@ -1,4 +1,8 @@
 {
   "$schema": "https://schema.railpack.com",
-  "phpExtensions": ["gd"]
+  "deploy": {
+    "variables": {
+      "RAILPACK_PHP_EXTENSIONS": "gd"
+    }
+  }
 }
