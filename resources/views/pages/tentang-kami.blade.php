@@ -11,24 +11,23 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
 
-    <!-- NAVBAR SIMPLE (Warna Senada Footer) -->
     <nav class="bg-gradient-to-r from-blue-800 to-indigo-900 w-full z-20 shadow-lg relative border-b border-indigo-900/50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="{{ url('/') }}" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 bg-white text-slate-900 rounded-xl flex items-center justify-center shadow-lg group-hover:bg-blue-100 transition">
-                    <i class="fa-solid fa-bus text-xl"></i>
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+            <a href="{{ url('/') }}" class="flex items-center space-x-2 md:space-x-3 group">
+                <div class="w-8 h-8 md:w-10 md:h-10 bg-white text-slate-900 rounded-lg md:rounded-xl flex items-center justify-center shadow-lg group-hover:bg-blue-100 transition">
+                    <i class="fa-solid fa-bus text-sm md:text-xl"></i>
                 </div>
-                <div class="text-lg font-extrabold tracking-tight text-white uppercase">
+                <div class="text-base md:text-xl font-extrabold tracking-tight text-white uppercase">
                     K2T
                 </div>
             </a>
             @guest
-                <div class="flex items-center gap-3">
-                    <a href="{{ route('login') }}" class="text-sm font-bold text-slate-300 hover:text-white transition">
+                <div class="flex items-center gap-2 md:gap-3">
+                    <a href="{{ route('login') }}" class="text-xs md:text-sm font-bold text-slate-300 hover:text-white transition">
                         Masuk
                     </a>
-                    <span class="text-slate-500">/</span>
-                    <a href="{{ route('register') }}" class="text-sm font-bold text-slate-300 hover:text-white transition">
+                    <span class="text-slate-500 mx-0.5 md:mx-1">/</span>
+                    <a href="{{ route('register') }}" class="text-xs md:text-sm font-bold text-slate-300 hover:text-white transition">
                         Daftar
                     </a>
                 </div>
@@ -36,11 +35,11 @@
 
             @auth
                 @if(Auth::user()->is_admin)
-                    <a href="{{ url('/admin/dashboard') }}" class="text-sm font-bold text-slate-300 hover:text-white transition flex items-center gap-2">
+                    <a href="{{ url('/admin/dashboard') }}" class="text-xs md:text-sm font-bold text-slate-300 hover:text-white transition flex items-center gap-1.5 md:gap-2">
                         Dashboard Admin <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 @else
-                    <a href="{{ route('dashboard') }}" class="text-sm font-bold text-slate-300 hover:text-white transition flex items-center gap-2">
+                    <a href="{{ route('dashboard') }}" class="text-xs md:text-sm font-bold text-slate-300 hover:text-white transition flex items-center gap-1.5 md:gap-2">
                         Dashboard <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 @endif
@@ -48,12 +47,11 @@
         </div>
     </nav>
 
-    <!-- BAGIAN TENGAH YANG AKAN BERUBAH-UBAH -->
-    <main class="flex-grow pt-12 pb-24 px-6">
-        <div class="max-w-4xl mx-auto bg-white p-10 md:p-14 rounded-3xl shadow-xl shadow-slate-200/40 border border-slate-100">
-            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 border-b-4 border-blue-600 pb-4 inline-block">Tentang Kami</h1>
+    <main class="flex-grow pt-8 md:pt-12 pb-16 md:pb-24 px-4 md:px-6">
+        <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 lg:p-14 rounded-3xl shadow-xl shadow-slate-200/40 border border-slate-100">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4 md:mb-6 border-b-4 border-blue-600 pb-3 md:pb-4 inline-block">Tentang Kami</h1>
             
-            <div class="space-y-6 text-slate-600 leading-relaxed">
+            <div class="space-y-4 md:space-y-6 text-slate-600 leading-relaxed text-sm md:text-base">
                 <p>
                     <strong class="text-slate-900">PO Kirana Tongkonan Transport</strong> adalah perusahaan penyedia jasa transportasi darat antarkota antarprovinsi (AKAP) yang berfokus melayani mobilitas masyarakat pada rute <strong>Manado – Toraja</strong> dan sebaliknya.
                 </p>
@@ -70,41 +68,35 @@
         </div>
     </main>
 
-    <!-- FOOTER SIMPLE -->
-<footer class="bg-gradient-to-r from-blue-800 to-indigo-900 py-12 text-center border-t border-blue-900/50">
-                <div class="max-w-4xl mx-auto px-6 flex flex-col items-center">
-                    
-                    <!-- Logo / Brand -->
-                    <div class="flex items-center justify-center space-x-3 mb-4">
-                        <span class="text-2xl font-extrabold text-white uppercase tracking-wider">KIRANA TONGKONAN TRANSPORT</span>
-                    </div>
+    <footer class="bg-gradient-to-r from-blue-800 to-indigo-900 py-8 md:py-12 text-center border-t border-blue-900/50">
+        <div class="max-w-4xl mx-auto px-4 md:px-6 flex flex-col items-center">
+            
+            <div class="mb-3 md:mb-4">
+                <span class="text-lg md:text-2xl font-extrabold text-white uppercase tracking-wider">KIRANA TONGKONAN TRANSPORT</span>
+            </div>
 
-                    <!-- Deskripsi Singkat -->
-                    <p class="text-sm text-blue-100/80 mb-8 max-w-2xl leading-relaxed font-medium">
-                        PO Kirana Tongkonan Transport merupakan salah satu perusahaan yang bergerak di bidang jasa transportasi umum darat, melayani rute perjalanan Anda dengan mengutamakan kenyamanan dan keamanan.
-                    </p>
+            <p class="text-xs md:text-sm text-blue-100/80 mb-6 md:mb-8 max-w-2xl leading-relaxed font-medium px-4">
+                PO Kirana Tongkonan Transport merupakan salah satu perusahaan yang bergerak di bidang jasa transportasi umum darat, melayani rute perjalanan Anda dengan mengutamakan kenyamanan dan keamanan.
+            </p>
 
-                    <!-- Navigasi 4 Menu -->
-                    <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm font-bold text-white">
-                        <a href="{{ route('tentang-kami') }}" class="hover:text-blue-300 transition-colors">Tentang Kami</a>
-                        <a href="{{ route('informasi-bus') }}" class="hover:text-blue-300 transition-colors">Informasi Bus</a>
-                        <a href="{{ route('kontak') }}" class="hover:text-blue-300 transition-colors">Kontak</a>
-                        <a href="{{ route('syarat-ketentuan') }}" class="hover:text-blue-300 transition-colors">Syarat & Ketentuan</a>
-                    </div>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6 mb-6 md:mb-8 text-[10px] md:text-sm font-bold text-white uppercase tracking-wide">
+                <a href="{{ route('tentang-kami') }}" class="hover:text-blue-300 transition-colors">Tentang Kami</a>
+                <a href="{{ route('informasi-bus') }}" class="hover:text-blue-300 transition-colors">Informasi Bus</a>
+                <a href="{{ route('kontak') }}" class="hover:text-blue-300 transition-colors">Kontak</a>
+                <a href="{{ route('syarat-ketentuan') }}" class="hover:text-blue-300 transition-colors">Syarat & Ketentuan</a>
+            </div>
 
-                    <!-- Ikon Sosial Media -->
-                    <div class="flex space-x-6 justify-center mb-8">
-                        <a href="#" class="text-blue-200 hover:text-white transition-colors text-xl"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="text-blue-200 hover:text-white transition-colors text-xl"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#" class="text-blue-200 hover:text-white transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
+            <div class="flex space-x-5 md:space-x-6 justify-center mb-6 md:mb-8">
+                <a href="#" class="text-blue-200 hover:text-white transition-colors text-lg md:text-xl"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="text-blue-200 hover:text-white transition-colors text-lg md:text-xl"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-blue-200 hover:text-white transition-colors text-lg md:text-xl"><i class="fa-brands fa-instagram"></i></a>
+            </div>
 
-                    <!-- Copyright -->
-                    <div class="text-blue-200/60 text-sm font-semibold tracking-wide">
-                        &copy; {{ date('Y') }} Kirana Tongkonan Transport
-                    </div>
-                </div>
-            </footer>
+            <div class="text-blue-200/60 text-[10px] md:text-sm font-semibold tracking-wide">
+                &copy; {{ date('Y') }} Kirana Tongkonan Transport
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
